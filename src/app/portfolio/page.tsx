@@ -164,7 +164,7 @@ export default function PortfolioPage() {
                 {/* Direct Action Buttons */}
                 <div className="flex flex-wrap gap-3 pt-2">
                   <a
-                    href="/Abishek_resume_sept.pdf"
+                    href={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/Abishek_resume_sept.pdf`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-5 py-3 rounded-xl text-xs font-bold bg-[#ff7a00] hover:bg-[#ff8f26] text-black transition flex items-center gap-2 shadow-lg"

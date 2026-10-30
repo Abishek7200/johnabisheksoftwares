@@ -160,7 +160,7 @@ export default function AboutSection() {
 
             <div className="flex flex-wrap gap-3 pt-3">
               <motion.a
-                href="/Abishek_resume_sept.pdf"
+                href={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/Abishek_resume_sept.pdf`}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.04, y: -2 }}
