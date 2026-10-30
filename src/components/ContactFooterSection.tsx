@@ -26,6 +26,8 @@ export default function ContactFooterSection() {
 
   const [copied, setCopied] = useState(false);
   const [sent, setSent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -39,18 +41,48 @@ export default function ContactFooterSection() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const handleContactSubmit = (e: React.FormEvent) => {
+  const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
-    setTimeout(() => {
-      setSent(false);
-      setFormState({
-        name: "",
-        email: "",
-        subject: "Test Automation / Mobile App Collaboration",
-        message: "",
+    setIsSubmitting(true);
+    setErrorMessage(null);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "0d59c664-59b8-47cb-a311-fb771598b8f8",
+          name: formState.name,
+          email: formState.email,
+          subject: formState.subject || "New Inquiry from John Abishek Softwares",
+          message: formState.message,
+          from_name: "Portfolio Website Contact Form",
+        }),
       });
-    }, 3000);
+
+      const result = await response.json();
+      if (result.success) {
+        setSent(true);
+        setFormState({
+          name: "",
+          email: "",
+          subject: "Test Automation / Mobile App Collaboration",
+          message: "",
+        });
+        setTimeout(() => {
+          setSent(false);
+        }, 5000);
+      } else {
+        setErrorMessage(result.message || "Failed to send message. Please try again.");
+      }
+    } catch {
+      setErrorMessage("Network connection error. Please try again or email directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -404,18 +436,38 @@ export default function ContactFooterSection() {
                   />
                 </div>
 
+                {errorMessage && (
+                  <div className="p-3 rounded-xl bg-red-500/15 border border-red-500/30 text-red-400 text-xs font-medium">
+                    {errorMessage}
+                  </div>
+                )}
+
                 <div className="flex items-center justify-between pt-2">
                   <div className={`text-[11px] ${isLight ? "text-zinc-500" : "text-zinc-400"}`}>
                     Direct response within 24 hours
                   </div>
                   <motion.button
                     type="submit"
-                    whileHover={{ scale: 1.04 }}
-                    whileTap={{ scale: 0.96 }}
-                    className="px-6 py-3 rounded-xl text-xs font-bold bg-[#ff7a00] hover:bg-[#ff8f26] text-black shadow-lg shadow-[#ff7a00]/25 transition flex items-center gap-2 cursor-pointer"
+                    disabled={isSubmitting}
+                    whileHover={!isSubmitting ? { scale: 1.04 } : {}}
+                    whileTap={!isSubmitting ? { scale: 0.96 } : {}}
+                    className={`px-6 py-3 rounded-xl text-xs font-bold transition flex items-center gap-2 ${
+                      isSubmitting
+                        ? "bg-[#ff7a00]/70 text-black cursor-wait"
+                        : "bg-[#ff7a00] hover:bg-[#ff8f26] text-black shadow-lg shadow-[#ff7a00]/25 cursor-pointer"
+                    }`}
                   >
-                    <Send className="w-3.5 h-3.5" />
-                    Send Message
+                    {isSubmitting ? (
+                      <>
+                        <span className="w-3.5 h-3.5 border-2 border-black border-t-transparent rounded-full animate-spin" />
+                        <span>Sending...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-3.5 h-3.5" />
+                        <span>Send Message</span>
+                      </>
+                    )}
                   </motion.button>
                 </div>
               </form>
