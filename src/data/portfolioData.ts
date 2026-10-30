@@ -101,7 +101,6 @@ export const portfolioData = {
     playDeveloperName: "Abishekkumar V (John Abishek Softwares)",
     playDeveloperUrl: "https://play.google.com/store/apps/developer?id=Abishekkumar",
     location: "Chennai, Tamil Nadu, India",
-    phone: "+91 7200943439",
     email: "vabishekkumar@gmail.com",
     github: "https://github.com/Abishek7200",
     linkedin: "https://www.linkedin.com/in/abishekkumar-v/",
