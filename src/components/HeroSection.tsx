@@ -121,7 +121,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative pt-36 sm:pt-44 md:pt-48 pb-16 sm:pb-20 overflow-hidden"
+      className="relative pt-28 sm:pt-36 md:pt-40 pb-16 sm:pb-20 overflow-hidden"
     >
       {/* Ambient Keynote Stage Spotlight Aura */}
       <div

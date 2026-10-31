@@ -60,20 +60,7 @@ export default function Navbar() {
           : "bg-transparent pointer-events-none"
       }`}
     >
-      {/* Top Brand Announcement Banner - Gracefully collapses on scroll */}
-      <div
-        className={`overflow-hidden transition-all duration-300 pointer-events-auto ${
-          scrolled ? "max-h-0 opacity-0 py-0" : "max-h-12 opacity-100 py-1"
-        } px-3 sm:px-4 text-center text-[10px] sm:text-[11px] font-semibold tracking-wider sm:tracking-widest uppercase ${
-          isLight
-            ? "bg-white/95 text-zinc-600 border-b border-zinc-200/80 shadow-xs"
-            : "bg-[#09090e]/95 text-zinc-400 border-b border-white/[0.06]"
-        } backdrop-blur-xl`}
-      >
-        <span className="text-[#ff7a00]">JOHN ABISHEK SOFTWARES</span> · INDEPENDENT SOFTWARE DEVELOPER · {portfolioData.domain}
-      </div>
-
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2 sm:py-2.5">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2.5 sm:py-3">
         <div
           className={`pointer-events-auto transition-all duration-300 rounded-2xl px-3 sm:px-5 py-2 sm:py-2.5 flex items-center justify-between gap-2 sm:gap-4 ${
             !scrolled
@@ -87,18 +74,16 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-2 sm:gap-2.5 shrink-0 group focus:outline-none min-w-0">
             <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-[#ff7a00] to-indigo-500 p-[1px] shadow-md shrink-0">
               <div
-                className={`w-full h-full rounded-[11px] flex items-center justify-center font-bold text-xs transition-colors ${
-                  isLight ? "bg-white text-zinc-900" : "bg-[#111118] text-white"
-                }`}
+                className={`w-full h-full rounded-[11px] flex items-center justify-center font-bold text-xs transition-colors ${isLight ? "bg-white text-zinc-900" : "bg-[#111118] text-white"
+                  }`}
               >
                 JA
               </div>
             </div>
             <div className="flex flex-col whitespace-nowrap min-w-0">
               <span
-                className={`font-bold text-xs sm:text-sm tracking-tight transition-colors group-hover:text-[#ff7a00] truncate ${
-                  isLight ? "text-zinc-950" : "text-white"
-                }`}
+                className={`font-bold text-xs sm:text-sm tracking-tight transition-colors group-hover:text-[#ff7a00] truncate ${isLight ? "text-zinc-950" : "text-white"
+                  }`}
               >
                 John Abishek Softwares
               </span>
@@ -110,44 +95,40 @@ export default function Navbar() {
 
           {/* Desktop Nav Items */}
           <nav
-            className={`hidden lg:flex items-center gap-1 whitespace-nowrap p-1 rounded-xl border transition-colors ${
-              isLight
-                ? "bg-zinc-100/90 border-zinc-200"
-                : "bg-black/50 border-white/[0.07]"
-            }`}
+            className={`hidden lg:flex items-center gap-1 whitespace-nowrap p-1 rounded-xl border transition-colors ${isLight
+              ? "bg-zinc-100/90 border-zinc-200"
+              : "bg-black/50 border-white/[0.07]"
+              }`}
           >
             {/* Softwares Tab */}
             <Link
               href="/"
-              className={`relative px-3 py-1.5 rounded-lg text-xs font-semibold tracking-wide transition-colors flex items-center gap-1.5 z-10 ${
-                !isPortfolioPage
-                  ? isLight
-                    ? "text-zinc-950 font-bold"
-                    : "text-white font-bold"
-                  : isLight
+              className={`relative px-3 py-1.5 rounded-lg text-xs font-semibold tracking-wide transition-colors flex items-center gap-1.5 z-10 ${!isPortfolioPage
+                ? isLight
+                  ? "text-zinc-950 font-bold"
+                  : "text-white font-bold"
+                : isLight
                   ? "text-zinc-600 hover:text-zinc-950"
                   : "text-zinc-400 hover:text-white"
-              }`}
+                }`}
             >
               {!isPortfolioPage && (
                 <motion.div
                   layoutId="active-nav-pill"
                   transition={{ type: "spring", stiffness: 400, damping: 32 }}
-                  className={`absolute inset-0 rounded-lg -z-10 shadow-sm ${
-                    isLight
-                      ? "bg-white border border-zinc-200"
-                      : "bg-white/10 border border-white/15"
-                  }`}
+                  className={`absolute inset-0 rounded-lg -z-10 shadow-sm ${isLight
+                    ? "bg-white border border-zinc-200"
+                    : "bg-white/10 border border-white/15"
+                    }`}
                 />
               )}
               <Gamepad2 className="w-3.5 h-3.5 text-[#ff7a00]" />
               <span>Softwares</span>
               <span
-                className={`px-1.5 py-0.2 rounded-full text-[10px] font-bold ${
-                  !isPortfolioPage
-                    ? "bg-[#ff7a00] text-black"
-                    : "bg-[#ff7a00]/20 text-[#ff7a00]"
-                }`}
+                className={`px-1.5 py-0.2 rounded-full text-[10px] font-bold ${!isPortfolioPage
+                  ? "bg-[#ff7a00] text-black"
+                  : "bg-[#ff7a00]/20 text-[#ff7a00]"
+                  }`}
               >
                 4
               </span>
@@ -157,9 +138,8 @@ export default function Navbar() {
             {!isPortfolioPage && (
               <a
                 href="#closed-testing"
-                className={`px-2.5 py-1.5 rounded-lg text-xs font-semibold tracking-wide transition-colors flex items-center gap-1.5 ${
-                  isLight ? "text-zinc-600 hover:text-zinc-950" : "text-zinc-400 hover:text-white"
-                }`}
+                className={`px-2.5 py-1.5 rounded-lg text-xs font-semibold tracking-wide transition-colors flex items-center gap-1.5 ${isLight ? "text-zinc-600 hover:text-zinc-950" : "text-zinc-400 hover:text-white"
+                  }`}
               >
                 <span>Closed Beta</span>
                 <span className="px-1.5 py-0.2 rounded-full text-[10px] font-bold bg-purple-500/20 text-purple-400">
@@ -171,35 +151,32 @@ export default function Navbar() {
             {/* Dedicated Developer Portfolio Page Link */}
             <Link
               href="/portfolio"
-              className={`relative px-3 py-1.5 rounded-lg text-xs font-semibold tracking-wide transition-colors flex items-center gap-1.5 z-10 ${
-                isPortfolioPage
-                  ? isLight
-                    ? "text-zinc-950 font-bold"
-                    : "text-white font-bold"
-                  : isLight
+              className={`relative px-3 py-1.5 rounded-lg text-xs font-semibold tracking-wide transition-colors flex items-center gap-1.5 z-10 ${isPortfolioPage
+                ? isLight
+                  ? "text-zinc-950 font-bold"
+                  : "text-white font-bold"
+                : isLight
                   ? "text-zinc-700 hover:text-zinc-950"
                   : "text-zinc-300 hover:text-white"
-              }`}
+                }`}
             >
               {isPortfolioPage && (
                 <motion.div
                   layoutId="active-nav-pill"
                   transition={{ type: "spring", stiffness: 400, damping: 32 }}
-                  className={`absolute inset-0 rounded-lg -z-10 shadow-sm ${
-                    isLight
-                      ? "bg-white border border-zinc-200"
-                      : "bg-white/10 border border-white/15"
-                  }`}
+                  className={`absolute inset-0 rounded-lg -z-10 shadow-sm ${isLight
+                    ? "bg-white border border-zinc-200"
+                    : "bg-white/10 border border-white/15"
+                    }`}
                 />
               )}
               <User className="w-3.5 h-3.5 text-indigo-400" />
               <span>Portfolio</span>
               <span
-                className={`px-1.5 py-0.2 rounded-full text-[10px] font-bold ${
-                  isPortfolioPage
-                    ? "bg-indigo-600 text-white"
-                    : "bg-indigo-500/20 text-indigo-400"
-                }`}
+                className={`px-1.5 py-0.2 rounded-full text-[10px] font-bold ${isPortfolioPage
+                  ? "bg-indigo-600 text-white"
+                  : "bg-indigo-500/20 text-indigo-400"
+                  }`}
               >
                 CV
               </span>
@@ -208,9 +185,8 @@ export default function Navbar() {
             {/* Contact Anchor */}
             <a
               href="#contact"
-              className={`px-2.5 py-1.5 rounded-lg text-xs font-semibold tracking-wide transition-colors ${
-                isLight ? "text-zinc-600 hover:text-zinc-950" : "text-zinc-400 hover:text-white"
-              }`}
+              className={`px-2.5 py-1.5 rounded-lg text-xs font-semibold tracking-wide transition-colors ${isLight ? "text-zinc-600 hover:text-zinc-950" : "text-zinc-400 hover:text-white"
+                }`}
             >
               Contact
             </a>
@@ -220,11 +196,10 @@ export default function Navbar() {
           <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
             {/* Compact Theme Switcher Pill */}
             <div
-              className={`flex items-center p-0.5 rounded-xl border transition-colors ${
-                isLight
-                  ? "bg-zinc-100 border-zinc-200"
-                  : "bg-black/50 border-white/10"
-              }`}
+              className={`flex items-center p-0.5 rounded-xl border transition-colors ${isLight
+                ? "bg-zinc-100 border-zinc-200"
+                : "bg-black/50 border-white/10"
+                }`}
             >
               {themeOptions.map((opt) => {
                 const isSelected = theme === opt.mode;
@@ -235,25 +210,23 @@ export default function Navbar() {
                     onClick={() => setTheme(opt.mode)}
                     title={`Theme: ${opt.label}`}
                     aria-label={`Switch to ${opt.label} Theme`}
-                    className={`relative p-1.5 rounded-lg text-xs flex items-center justify-center transition-colors cursor-pointer ${
-                      isSelected
-                        ? isLight
-                          ? "text-zinc-950 shadow-xs"
-                          : "text-white shadow-xs"
-                        : isLight
+                    className={`relative p-1.5 rounded-lg text-xs flex items-center justify-center transition-colors cursor-pointer ${isSelected
+                      ? isLight
+                        ? "text-zinc-950 shadow-xs"
+                        : "text-white shadow-xs"
+                      : isLight
                         ? "text-zinc-400 hover:text-zinc-900"
                         : "text-zinc-500 hover:text-white"
-                    }`}
+                      }`}
                   >
                     {isSelected && (
                       <motion.div
                         layoutId="active-theme-pill"
                         transition={{ type: "spring", stiffness: 450, damping: 35 }}
-                        className={`absolute inset-0 rounded-lg -z-10 ${
-                          isLight
-                            ? "bg-white border border-zinc-200 shadow-sm"
-                            : "bg-[#ff7a00]/20 border border-[#ff7a00]/40 text-[#ff7a00]"
-                        }`}
+                        className={`absolute inset-0 rounded-lg -z-10 ${isLight
+                          ? "bg-white border border-zinc-200 shadow-sm"
+                          : "bg-[#ff7a00]/20 border border-[#ff7a00]/40 text-[#ff7a00]"
+                          }`}
                       />
                     )}
                     <span className={isSelected ? "text-[#ff7a00]" : ""}>{opt.icon}</span>
@@ -288,11 +261,10 @@ export default function Navbar() {
             {/* Mobile Menu Hamburger Toggle Button - ALWAYS Visible on Mobile */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`lg:hidden p-2 rounded-xl border shrink-0 transition-colors cursor-pointer ${
-                isLight
-                  ? "bg-zinc-100 hover:bg-zinc-200 border-zinc-200 text-zinc-800"
-                  : "bg-white/[0.06] hover:bg-white/[0.12] border-white/10 text-zinc-200"
-              }`}
+              className={`lg:hidden p-2 rounded-xl border shrink-0 transition-colors cursor-pointer ${isLight
+                ? "bg-zinc-100 hover:bg-zinc-200 border-zinc-200 text-zinc-800"
+                : "bg-white/[0.06] hover:bg-white/[0.12] border-white/10 text-zinc-200"
+                }`}
               aria-label="Toggle Navigation Menu"
             >
               {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
@@ -308,33 +280,30 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.98 }}
               transition={{ duration: 0.2 }}
-              className={`lg:hidden pointer-events-auto mt-2 rounded-2xl p-4 shadow-2xl border ${
-                isLight
-                  ? "bg-white/98 backdrop-blur-2xl border-zinc-200 text-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.15)]"
-                  : "bg-[#111118]/98 backdrop-blur-2xl border-white/15 text-white shadow-[0_24px_60px_rgba(0,0,0,0.85)]"
-              }`}
+              className={`lg:hidden pointer-events-auto mt-2 rounded-2xl p-4 shadow-2xl border ${isLight
+                ? "bg-white/98 backdrop-blur-2xl border-zinc-200 text-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.15)]"
+                : "bg-[#111118]/98 backdrop-blur-2xl border-white/15 text-white shadow-[0_24px_60px_rgba(0,0,0,0.85)]"
+                }`}
             >
               <div className="space-y-2">
                 <div className="grid grid-cols-2 gap-2">
                   <Link
                     href="/"
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`flex items-center justify-between p-3 rounded-xl text-xs font-bold transition-all ${
-                      !isPortfolioPage
-                        ? "bg-[#ff7a00] text-black shadow-md"
-                        : isLight
+                    className={`flex items-center justify-between p-3 rounded-xl text-xs font-bold transition-all ${!isPortfolioPage
+                      ? "bg-[#ff7a00] text-black shadow-md"
+                      : isLight
                         ? "bg-zinc-100 text-zinc-800 hover:bg-zinc-200"
                         : "bg-white/[0.05] text-zinc-200 hover:bg-white/10"
-                    }`}
+                      }`}
                   >
                     <span className="flex items-center gap-2">
                       <Gamepad2 className="w-4 h-4" />
                       Softwares
                     </span>
                     <span
-                      className={`px-1.5 py-0.2 rounded-full text-[10px] font-bold ${
-                        !isPortfolioPage ? "bg-black text-[#ff7a00]" : "bg-[#ff7a00]/20 text-[#ff7a00]"
-                      }`}
+                      className={`px-1.5 py-0.2 rounded-full text-[10px] font-bold ${!isPortfolioPage ? "bg-black text-[#ff7a00]" : "bg-[#ff7a00]/20 text-[#ff7a00]"
+                        }`}
                     >
                       4
                     </span>
@@ -343,22 +312,20 @@ export default function Navbar() {
                   <Link
                     href="/portfolio"
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`flex items-center justify-between p-3 rounded-xl text-xs font-bold transition-all ${
-                      isPortfolioPage
-                        ? "bg-indigo-600 text-white shadow-md"
-                        : isLight
+                    className={`flex items-center justify-between p-3 rounded-xl text-xs font-bold transition-all ${isPortfolioPage
+                      ? "bg-indigo-600 text-white shadow-md"
+                      : isLight
                         ? "bg-zinc-100 text-zinc-800 hover:bg-zinc-200"
                         : "bg-white/[0.05] text-zinc-200 hover:bg-white/10"
-                    }`}
+                      }`}
                   >
                     <span className="flex items-center gap-2">
                       <User className="w-4 h-4 text-indigo-400" />
                       Portfolio
                     </span>
                     <span
-                      className={`px-1.5 py-0.2 rounded-full text-[10px] font-bold ${
-                        isPortfolioPage ? "bg-white text-indigo-600" : "bg-indigo-500/20 text-indigo-400"
-                      }`}
+                      className={`px-1.5 py-0.2 rounded-full text-[10px] font-bold ${isPortfolioPage ? "bg-white text-indigo-600" : "bg-indigo-500/20 text-indigo-400"
+                        }`}
                     >
                       CV
                     </span>
@@ -370,11 +337,10 @@ export default function Navbar() {
                     <a
                       href="#closed-testing"
                       onClick={() => setMobileMenuOpen(false)}
-                      className={`flex items-center justify-between p-3 rounded-xl text-xs font-semibold border transition-all ${
-                        isLight
-                          ? "bg-zinc-50 border-zinc-200 text-zinc-800 hover:bg-zinc-100"
-                          : "bg-white/[0.03] border-white/10 text-zinc-300 hover:bg-white/[0.08]"
-                      }`}
+                      className={`flex items-center justify-between p-3 rounded-xl text-xs font-semibold border transition-all ${isLight
+                        ? "bg-zinc-50 border-zinc-200 text-zinc-800 hover:bg-zinc-100"
+                        : "bg-white/[0.03] border-white/10 text-zinc-300 hover:bg-white/[0.08]"
+                        }`}
                     >
                       <span className="flex items-center gap-2">
                         <FlaskConical className="w-4 h-4 text-purple-400" />
@@ -388,11 +354,10 @@ export default function Navbar() {
                     <a
                       href="#contact"
                       onClick={() => setMobileMenuOpen(false)}
-                      className={`flex items-center justify-between p-3 rounded-xl text-xs font-semibold border transition-all ${
-                        isLight
-                          ? "bg-zinc-50 border-zinc-200 text-zinc-800 hover:bg-zinc-100"
-                          : "bg-white/[0.03] border-white/10 text-zinc-300 hover:bg-white/[0.08]"
-                      }`}
+                      className={`flex items-center justify-between p-3 rounded-xl text-xs font-semibold border transition-all ${isLight
+                        ? "bg-zinc-50 border-zinc-200 text-zinc-800 hover:bg-zinc-100"
+                        : "bg-white/[0.03] border-white/10 text-zinc-300 hover:bg-white/[0.08]"
+                        }`}
                     >
                       <span className="flex items-center gap-2">
                         <Mail className="w-4 h-4 text-emerald-400" />
@@ -417,9 +382,8 @@ export default function Navbar() {
 
                 {/* Subtitle / Verification Tag */}
                 <div
-                  className={`pt-2 border-t text-center text-[10px] font-mono flex items-center justify-center gap-2 ${
-                    isLight ? "border-zinc-200 text-zinc-500" : "border-white/10 text-zinc-400"
-                  }`}
+                  className={`pt-2 border-t text-center text-[10px] font-mono flex items-center justify-center gap-2 ${isLight ? "border-zinc-200 text-zinc-500" : "border-white/10 text-zinc-400"
+                    }`}
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                   <span>Independent Software Developer · {portfolioData.domain}</span>

@@ -64,18 +64,17 @@ export default function PortfolioPage() {
 
   return (
     <div
-      className={`relative min-h-screen transition-colors duration-500 overflow-x-hidden ${
-        isLight
-          ? "bg-[#f8fafc] text-zinc-900 selection:bg-[#ff7a00]/30 selection:text-black"
-          : "bg-[#09090e] text-zinc-100 selection:bg-[#ff7a00]/30 selection:text-white"
-      }`}
+      className={`relative min-h-screen transition-colors duration-500 overflow-x-hidden ${isLight
+        ? "bg-[#f8fafc] text-zinc-900 selection:bg-[#ff7a00]/30 selection:text-black"
+        : "bg-[#09090e] text-zinc-100 selection:bg-[#ff7a00]/30 selection:text-white"
+        }`}
     >
       {theme !== "light" && <ThreeBackground />}
 
       <div className="relative z-10">
-        <Navbar />
+        {/* <Navbar /> */}
 
-        <main className="pt-36 pb-20">
+        <main className="pt-28 sm:pt-32 pb-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
             {/* Top Return Banner to Software Studio */}
             <div className="flex items-center justify-between pb-4 border-b border-white/[0.08]">
@@ -98,9 +97,8 @@ export default function PortfolioPage() {
                 <div className="relative group">
                   <div className="absolute -inset-1.5 rounded-[2.5rem] bg-gradient-to-tr from-[#ff7a00] via-indigo-500 to-purple-600 opacity-60 blur-lg group-hover:opacity-100 transition duration-700" />
                   <div
-                    className={`relative w-[290px] h-[360px] sm:w-[330px] sm:h-[410px] rounded-[2.25rem] overflow-hidden border-2 shadow-2xl ${
-                      isLight ? "border-zinc-200 bg-white" : "border-white/20 bg-[#111118]"
-                    }`}
+                    className={`relative w-[290px] h-[360px] sm:w-[330px] sm:h-[410px] rounded-[2.25rem] overflow-hidden border-2 shadow-2xl ${isLight ? "border-zinc-200 bg-white" : "border-white/20 bg-[#111118]"
+                      }`}
                   >
                     <Image
                       src={portfolioData.developer.photoUrl}
@@ -134,29 +132,26 @@ export default function PortfolioPage() {
                 </div>
 
                 <h1
-                  className={`text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight ${
-                    isLight ? "text-zinc-950" : "text-white"
-                  }`}
+                  className={`text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight ${isLight ? "text-zinc-950" : "text-white"
+                    }`}
                 >
                   {portfolioData.developer.name}
                 </h1>
 
                 <div className="text-lg sm:text-xl font-bold bg-gradient-to-r from-indigo-500 via-purple-400 to-[#ff7a00] bg-clip-text text-transparent">
-                  Automation Test Architect & Solo Mobile Engineer
+                  Automation Test Architect
                 </div>
 
                 <p
-                  className={`text-sm sm:text-base leading-relaxed ${
-                    isLight ? "text-zinc-700" : "text-zinc-300"
-                  }`}
+                  className={`text-sm sm:text-base leading-relaxed ${isLight ? "text-zinc-700" : "text-zinc-300"
+                    }`}
                 >
                   {portfolioData.developer.shortBio}
                 </p>
 
                 <p
-                  className={`text-sm sm:text-base leading-relaxed ${
-                    isLight ? "text-zinc-700" : "text-zinc-300"
-                  }`}
+                  className={`text-sm sm:text-base leading-relaxed ${isLight ? "text-zinc-700" : "text-zinc-300"
+                    }`}
                 >
                   {portfolioData.developer.detailedBio}
                 </p>
@@ -177,28 +172,25 @@ export default function PortfolioPage() {
                     href="https://www.linkedin.com/in/abishekkumar-v/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`px-5 py-3 rounded-xl text-xs font-semibold border transition shadow-sm ${
-                      isLight
-                        ? "bg-white border-zinc-200 text-zinc-900 hover:bg-zinc-50"
-                        : "bg-white/[0.06] hover:bg-white/[0.1] text-white border-white/10"
-                    }`}
+                    className={`px-5 py-3 rounded-xl text-xs font-semibold border transition shadow-sm ${isLight
+                      ? "bg-white border-zinc-200 text-zinc-900 hover:bg-zinc-50"
+                      : "bg-white/[0.06] hover:bg-white/[0.1] text-white border-white/10"
+                      }`}
                   >
-                    LinkedIn Profile
-                    <ExternalLink className="w-3 h-3 ml-1" />
+                    LinkedIn Profile <ExternalLink className="w-3 h-3 ml-1" />
                   </a>
 
-                  <Link
+                  {/* <Link
                     href="/"
-                    className={`px-5 py-3 rounded-xl text-xs font-semibold border transition shadow-sm flex items-center gap-2 ${
-                      isLight
-                        ? "bg-indigo-50 border-indigo-200 text-indigo-700 hover:bg-indigo-100"
-                        : "bg-indigo-500/20 border-indigo-500/30 text-indigo-300 hover:bg-indigo-500/30"
-                    }`}
+                    className={`px-5 py-3 rounded-xl text-xs font-semibold border transition shadow-sm flex items-center gap-2 ${isLight
+                      ? "bg-indigo-50 border-indigo-200 text-indigo-700 hover:bg-indigo-100"
+                      : "bg-indigo-500/20 border-indigo-500/30 text-indigo-300 hover:bg-indigo-500/30"
+                      }`}
                   >
                     <Gamepad2 className="w-4 h-4" />
                     Explore Published Softwares Catalog
                     <ArrowRight className="w-3 h-3" />
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             </div>
@@ -206,9 +198,8 @@ export default function PortfolioPage() {
             {/* 4 Pillars of Developer Expertise */}
             <div className="pt-8 space-y-6">
               <h2
-                className={`text-2xl sm:text-3xl font-extrabold tracking-tight ${
-                  isLight ? "text-zinc-950" : "text-white"
-                }`}
+                className={`text-2xl sm:text-3xl font-extrabold tracking-tight ${isLight ? "text-zinc-950" : "text-white"
+                  }`}
               >
                 Core Pillars & Development Philosophy
               </h2>
@@ -217,37 +208,33 @@ export default function PortfolioPage() {
                 {aboutPillars.map((pillar) => (
                   <div
                     key={pillar.num}
-                    className={`p-7 rounded-[2rem] border transition-all space-y-3 relative shadow-lg ${
-                      isLightCard
-                        ? "bg-gradient-to-b from-white to-[#f8f9fc] border-zinc-200/90 shadow-[0_16px_45px_rgba(0,0,0,0.12)]"
-                        : "bg-[#111118] border-white/[0.08]"
-                    }`}
+                    className={`p-7 rounded-[2rem] border transition-all space-y-3 relative shadow-lg ${isLightCard
+                      ? "bg-gradient-to-b from-white to-[#f8f9fc] border-zinc-200/90 shadow-[0_16px_45px_rgba(0,0,0,0.12)]"
+                      : "bg-[#111118] border-white/[0.08]"
+                      }`}
                   >
                     <div className="flex items-center justify-between">
                       <span className="text-3xl font-extrabold font-mono text-[#ff7a00]">
                         {pillar.num}.
                       </span>
                       <span
-                        className={`px-3 py-1 rounded-full text-xs font-semibold border ${
-                          isLightCard
-                            ? "bg-zinc-100 text-zinc-800 border-zinc-200"
-                            : "bg-white/[0.05] text-zinc-300 border border-white/10"
-                        }`}
+                        className={`px-3 py-1 rounded-full text-xs font-semibold border ${isLightCard
+                          ? "bg-zinc-100 text-zinc-800 border-zinc-200"
+                          : "bg-white/[0.05] text-zinc-300 border border-white/10"
+                          }`}
                       >
                         {pillar.badge}
                       </span>
                     </div>
                     <h3
-                      className={`text-xl font-bold ${
-                        isLightCard ? "text-zinc-950" : "text-white"
-                      }`}
+                      className={`text-xl font-bold ${isLightCard ? "text-zinc-950" : "text-white"
+                        }`}
                     >
                       {pillar.title}
                     </h3>
                     <p
-                      className={`text-xs sm:text-sm leading-relaxed ${
-                        isLightCard ? "text-zinc-600 font-medium" : "text-zinc-400"
-                      }`}
+                      className={`text-xs sm:text-sm leading-relaxed ${isLightCard ? "text-zinc-600 font-medium" : "text-zinc-400"
+                        }`}
                     >
                       {pillar.desc}
                     </p>
@@ -263,9 +250,8 @@ export default function PortfolioPage() {
                 PROFESSIONAL CAREER TIMELINE
               </div>
               <h2
-                className={`text-3xl sm:text-4xl font-extrabold tracking-tight ${
-                  isLight ? "text-zinc-950" : "text-white"
-                }`}
+                className={`text-3xl sm:text-4xl font-extrabold tracking-tight ${isLight ? "text-zinc-950" : "text-white"
+                  }`}
               >
                 Work Experience & Enterprise Track Record
               </h2>
@@ -274,23 +260,20 @@ export default function PortfolioPage() {
                 {portfolioData.experience.map((exp) => (
                   <div
                     key={exp.id}
-                    className={`rounded-3xl p-6 sm:p-8 border space-y-4 shadow-lg ${
-                      isLightCard
-                        ? "bg-gradient-to-b from-white to-[#f8f9fc] border-zinc-200/90 shadow-[0_16px_45px_rgba(0,0,0,0.12)]"
-                        : "bg-[#111118] border-white/[0.08]"
-                    }`}
+                    className={`rounded-3xl p-6 sm:p-8 border space-y-4 shadow-lg ${isLightCard
+                      ? "bg-gradient-to-b from-white to-[#f8f9fc] border-zinc-200/90 shadow-[0_16px_45px_rgba(0,0,0,0.12)]"
+                      : "bg-[#111118] border-white/[0.08]"
+                      }`}
                   >
                     <div
-                      className={`flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b ${
-                        isLightCard ? "border-zinc-200" : "border-white/10"
-                      }`}
+                      className={`flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b ${isLightCard ? "border-zinc-200" : "border-white/10"
+                        }`}
                     >
                       <div>
                         <div className="flex flex-wrap items-center gap-2.5">
                           <h3
-                            className={`text-xl sm:text-2xl font-bold ${
-                              isLightCard ? "text-zinc-950" : "text-white"
-                            }`}
+                            className={`text-xl sm:text-2xl font-bold ${isLightCard ? "text-zinc-950" : "text-white"
+                              }`}
                           >
                             {exp.role}
                           </h3>
@@ -304,9 +287,8 @@ export default function PortfolioPage() {
                       </div>
 
                       <div
-                        className={`flex flex-wrap items-center gap-4 text-xs font-medium ${
-                          isLightCard ? "text-zinc-600" : "text-zinc-400"
-                        }`}
+                        className={`flex flex-wrap items-center gap-4 text-xs font-medium ${isLightCard ? "text-zinc-600" : "text-zinc-400"
+                          }`}
                       >
                         <span className="flex items-center gap-1.5">
                           <Calendar className="w-3.5 h-3.5 text-[#ff7a00]" />
@@ -320,9 +302,8 @@ export default function PortfolioPage() {
                     </div>
 
                     <p
-                      className={`text-sm leading-relaxed ${
-                        isLightCard ? "text-zinc-700" : "text-zinc-300"
-                      }`}
+                      className={`text-sm leading-relaxed ${isLightCard ? "text-zinc-700" : "text-zinc-300"
+                        }`}
                     >
                       {exp.description}
                     </p>
@@ -331,9 +312,8 @@ export default function PortfolioPage() {
                       {exp.achievements.map((ach, i) => (
                         <div
                           key={i}
-                          className={`flex items-start gap-2.5 text-xs sm:text-sm font-medium ${
-                            isLightCard ? "text-zinc-800" : "text-zinc-200"
-                          }`}
+                          className={`flex items-start gap-2.5 text-xs sm:text-sm font-medium ${isLightCard ? "text-zinc-800" : "text-zinc-200"
+                            }`}
                         >
                           <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
                           <span>{ach}</span>
@@ -342,18 +322,16 @@ export default function PortfolioPage() {
                     </div>
 
                     <div
-                      className={`flex flex-wrap gap-2 pt-2 border-t ${
-                        isLightCard ? "border-zinc-200" : "border-white/[0.08]"
-                      }`}
+                      className={`flex flex-wrap gap-2 pt-2 border-t ${isLightCard ? "border-zinc-200" : "border-white/[0.08]"
+                        }`}
                     >
                       {exp.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className={`px-2.5 py-1 rounded-lg text-xs font-semibold border ${
-                            isLightCard
-                              ? "bg-zinc-100 text-zinc-800 border-zinc-200"
-                              : "bg-black/60 text-zinc-300 border-white/[0.08]"
-                          }`}
+                          className={`px-2.5 py-1 rounded-lg text-xs font-semibold border ${isLightCard
+                            ? "bg-zinc-100 text-zinc-800 border-zinc-200"
+                            : "bg-black/60 text-zinc-300 border-white/[0.08]"
+                            }`}
                         >
                           {tech}
                         </span>
@@ -369,9 +347,8 @@ export default function PortfolioPage() {
               <div className="flex items-center gap-2">
                 <Trophy className="w-5 h-5 text-[#ff7a00]" />
                 <h2
-                  className={`text-2xl sm:text-3xl font-extrabold tracking-tight ${
-                    isLight ? "text-zinc-950" : "text-white"
-                  }`}
+                  className={`text-2xl sm:text-3xl font-extrabold tracking-tight ${isLight ? "text-zinc-950" : "text-white"
+                    }`}
                 >
                   Notable Honors & Recognition at Exeter Premedia Services
                 </h2>
@@ -381,11 +358,10 @@ export default function PortfolioPage() {
                 {portfolioData.awards.map((award) => (
                   <div
                     key={award.id}
-                    className={`p-6 rounded-3xl border space-y-3 shadow-md ${
-                      isLightCard
-                        ? "bg-gradient-to-b from-white to-[#f8f9fc] border-zinc-200/90 shadow-[0_12px_35px_rgba(0,0,0,0.08)]"
-                        : "bg-[#111118] border-white/[0.08]"
-                    }`}
+                    className={`p-6 rounded-3xl border space-y-3 shadow-md ${isLightCard
+                      ? "bg-gradient-to-b from-white to-[#f8f9fc] border-zinc-200/90 shadow-[0_12px_35px_rgba(0,0,0,0.08)]"
+                      : "bg-[#111118] border-white/[0.08]"
+                      }`}
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div>
@@ -393,9 +369,8 @@ export default function PortfolioPage() {
                           {award.date}
                         </span>
                         <h4
-                          className={`text-lg font-bold mt-1.5 ${
-                            isLightCard ? "text-zinc-950" : "text-white"
-                          }`}
+                          className={`text-lg font-bold mt-1.5 ${isLightCard ? "text-zinc-950" : "text-white"
+                            }`}
                         >
                           {award.title}
                         </h4>
@@ -408,9 +383,8 @@ export default function PortfolioPage() {
                       </div>
                     </div>
                     <p
-                      className={`text-xs sm:text-sm leading-relaxed pt-1 font-medium ${
-                        isLightCard ? "text-zinc-600" : "text-zinc-300"
-                      }`}
+                      className={`text-xs sm:text-sm leading-relaxed pt-1 font-medium ${isLightCard ? "text-zinc-600" : "text-zinc-300"
+                        }`}
                     >
                       {award.description}
                     </p>
@@ -422,11 +396,10 @@ export default function PortfolioPage() {
             {/* Education & Credentials */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 pt-8">
               <div
-                className={`lg:col-span-5 p-6 rounded-3xl border flex flex-col justify-between shadow-md ${
-                  isLightCard
-                    ? "bg-gradient-to-b from-white to-[#f8f9fc] border-zinc-200/90"
-                    : "bg-[#111118] border-white/[0.08]"
-                }`}
+                className={`lg:col-span-5 p-6 rounded-3xl border flex flex-col justify-between shadow-md ${isLightCard
+                  ? "bg-gradient-to-b from-white to-[#f8f9fc] border-zinc-200/90"
+                  : "bg-[#111118] border-white/[0.08]"
+                  }`}
               >
                 <div>
                   <div className="flex items-center gap-2 text-[#ff7a00] mb-2.5 text-xs font-bold uppercase tracking-wider">
@@ -436,23 +409,20 @@ export default function PortfolioPage() {
                   {portfolioData.education.map((edu, idx) => (
                     <div key={idx} className="space-y-1">
                       <h4
-                        className={`text-base font-bold ${
-                          isLightCard ? "text-zinc-950" : "text-white"
-                        }`}
+                        className={`text-base font-bold ${isLightCard ? "text-zinc-950" : "text-white"
+                          }`}
                       >
                         {edu.degree}
                       </h4>
                       <p
-                        className={`text-xs font-medium ${
-                          isLightCard ? "text-zinc-600" : "text-zinc-300"
-                        }`}
+                        className={`text-xs font-medium ${isLightCard ? "text-zinc-600" : "text-zinc-300"
+                          }`}
                       >
                         {edu.institution}
                       </p>
                       <div
-                        className={`flex items-center gap-2 text-xs pt-1 ${
-                          isLightCard ? "text-zinc-500" : "text-zinc-400"
-                        }`}
+                        className={`flex items-center gap-2 text-xs pt-1 ${isLightCard ? "text-zinc-500" : "text-zinc-400"
+                          }`}
                       >
                         <span>{edu.location}</span>
                         <span>•</span>
@@ -466,11 +436,10 @@ export default function PortfolioPage() {
               </div>
 
               <div
-                className={`lg:col-span-7 p-6 rounded-3xl border shadow-md ${
-                  isLightCard
-                    ? "bg-gradient-to-b from-white to-[#f8f9fc] border-zinc-200/90"
-                    : "bg-[#111118] border-white/[0.08]"
-                }`}
+                className={`lg:col-span-7 p-6 rounded-3xl border shadow-md ${isLightCard
+                  ? "bg-gradient-to-b from-white to-[#f8f9fc] border-zinc-200/90"
+                  : "bg-[#111118] border-white/[0.08]"
+                  }`}
               >
                 <div className="flex items-center gap-2 text-indigo-500 mb-2.5 text-xs font-bold uppercase tracking-wider">
                   <Award className="w-4 h-4" />
@@ -480,20 +449,18 @@ export default function PortfolioPage() {
                   {portfolioData.certifications.map((cert, idx) => (
                     <div
                       key={idx}
-                      className={`px-3 py-1.5 rounded-lg border text-xs flex items-center gap-1.5 ${
-                        isLightCard
-                          ? "bg-white border-zinc-200 text-zinc-900 shadow-xs"
-                          : "bg-black/60 border-white/[0.08] text-zinc-200"
-                      }`}
+                      className={`px-3 py-1.5 rounded-lg border text-xs flex items-center gap-1.5 ${isLightCard
+                        ? "bg-white border-zinc-200 text-zinc-900 shadow-xs"
+                        : "bg-black/60 border-white/[0.08] text-zinc-200"
+                        }`}
                     >
                       <Check className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
                       <span className={`font-semibold ${isLightCard ? "text-zinc-950" : "text-white"}`}>
                         {cert.name}
                       </span>
                       <span
-                        className={`font-mono text-[10px] ${
-                          isLightCard ? "text-zinc-500" : "text-zinc-400"
-                        }`}
+                        className={`font-mono text-[10px] ${isLightCard ? "text-zinc-500" : "text-zinc-400"
+                          }`}
                       >
                         ({cert.provider})
                       </span>
