@@ -7,6 +7,11 @@ export default function ThreeBackground() {
   const mountRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // If the document is currently in light mode, bypass Three.js WebGL canvas initialization
+    if (typeof document !== "undefined" && document.documentElement.getAttribute("data-theme") === "light") {
+      return;
+    }
+
     const container = mountRef.current;
     if (!container) return;
 
@@ -175,7 +180,7 @@ export default function ThreeBackground() {
   return (
     <div
       ref={mountRef}
-      className="pointer-events-none fixed inset-0 z-0 opacity-80 transition-opacity duration-1000"
+      className="three-background-canvas pointer-events-none fixed inset-0 z-0 opacity-80 transition-opacity duration-1000"
       aria-hidden="true"
     />
   );

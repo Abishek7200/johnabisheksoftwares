@@ -26,7 +26,7 @@ export default function Navbar() {
   const isPortfolioPage = pathname?.startsWith("/portfolio");
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, isMounted } = useTheme();
 
   useEffect(() => {
     const onScroll = () => {
@@ -202,31 +202,34 @@ export default function Navbar() {
                 }`}
             >
               {themeOptions.map((opt) => {
-                const isSelected = theme === opt.mode;
+                const isSelected = isMounted ? theme === opt.mode : opt.mode === "hybrid";
                 return (
                   <button
                     key={opt.mode}
                     type="button"
+                    suppressHydrationWarning
                     onClick={() => setTheme(opt.mode)}
                     title={`Theme: ${opt.label}`}
                     aria-label={`Switch to ${opt.label} Theme`}
-                    className={`relative p-1.5 rounded-lg text-xs flex items-center justify-center transition-colors cursor-pointer ${isSelected
-                      ? isLight
-                        ? "text-zinc-950 shadow-xs"
-                        : "text-white shadow-xs"
-                      : isLight
+                    className={`relative p-1.5 rounded-lg text-xs flex items-center justify-center transition-colors cursor-pointer ${
+                      isSelected
+                        ? isLight
+                          ? "text-zinc-950 shadow-xs"
+                          : "text-white shadow-xs"
+                        : isLight
                         ? "text-zinc-400 hover:text-zinc-900"
                         : "text-zinc-500 hover:text-white"
-                      }`}
+                    }`}
                   >
-                    {isSelected && (
+                    {isMounted && isSelected && (
                       <motion.div
                         layoutId="active-theme-pill"
                         transition={{ type: "spring", stiffness: 450, damping: 35 }}
-                        className={`absolute inset-0 rounded-lg -z-10 ${isLight
-                          ? "bg-white border border-zinc-200 shadow-sm"
-                          : "bg-[#ff7a00]/20 border border-[#ff7a00]/40 text-[#ff7a00]"
-                          }`}
+                        className={`absolute inset-0 rounded-lg -z-10 ${
+                          isLight
+                            ? "bg-white border border-zinc-200 shadow-sm"
+                            : "bg-[#ff7a00]/20 border border-[#ff7a00]/40 text-[#ff7a00]"
+                        }`}
                       />
                     )}
                     <span className={isSelected ? "text-[#ff7a00]" : ""}>{opt.icon}</span>

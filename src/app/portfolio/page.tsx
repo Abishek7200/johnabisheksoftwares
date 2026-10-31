@@ -63,12 +63,7 @@ export default function PortfolioPage() {
   const isLightCard = theme === "light";
 
   return (
-    <div
-      className={`relative min-h-screen transition-colors duration-500 overflow-x-hidden ${isLight
-        ? "bg-[#f8fafc] text-zinc-900 selection:bg-[#ff7a00]/30 selection:text-black"
-        : "bg-[#09090e] text-zinc-100 selection:bg-[#ff7a00]/30 selection:text-white"
-        }`}
-    >
+    <div className="page-root relative min-h-screen overflow-x-hidden selection:bg-[#ff7a00]/30 selection:text-black">
       {theme !== "light" && <ThreeBackground />}
 
       <div className="relative z-10">
@@ -83,7 +78,7 @@ export default function PortfolioPage() {
                 className="inline-flex items-center gap-2 text-xs font-semibold text-[#ff7a00] hover:underline"
               >
                 <ArrowLeft className="w-3.5 h-3.5" />
-                ← Back to Published Softwares & Games
+                Back to Published Softwares & Games
               </Link>
               <span className="text-xs text-zinc-400 hidden sm:inline">
                 Official Developer Curriculum Vitae & Portfolio
@@ -139,7 +134,7 @@ export default function PortfolioPage() {
                 </h1>
 
                 <div className="text-lg sm:text-xl font-bold bg-gradient-to-r from-indigo-500 via-purple-400 to-[#ff7a00] bg-clip-text text-transparent">
-                  Automation Test Architect
+                  Independent Software Developer & Test Automation Engineer
                 </div>
 
                 <p

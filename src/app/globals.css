@@ -7,21 +7,32 @@
   --card-border: rgba(255, 255, 255, 0.08);
   --accent-orange: #ff7a00;
   --accent-indigo: #6366f1;
+  --page-bg: #09090e;
+  --page-text: #f4f4f7;
 }
 
-.theme-dark {
+.theme-dark,
+html[data-theme="dark"] {
   --background: #09090e;
   --foreground: #f4f4f7;
+  --page-bg: #09090e;
+  --page-text: #f4f4f7;
 }
 
-.theme-light {
+.theme-light,
+html[data-theme="light"] {
   --background: #f8fafc;
   --foreground: #0f172a;
+  --page-bg: #f8fafc;
+  --page-text: #0f172a;
 }
 
-.theme-hybrid {
+.theme-hybrid,
+html[data-theme="hybrid"] {
   --background: #09090e;
   --foreground: #f4f4f7;
+  --page-bg: #09090e;
+  --page-text: #f4f4f7;
 }
 
 @theme inline {
@@ -33,15 +44,55 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--page-bg);
+  color: var(--page-text);
+}
+
+/* Prevent any transition animation during initial load/hydration to eliminate theme flicker */
+html:not(.theme-ready),
+html:not(.theme-ready) body,
+html:not(.theme-ready) *,
+html:not(.theme-ready) *::before,
+html:not(.theme-ready) *::after {
+  transition: none !important;
 }
 
 body {
   font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
   letter-spacing: -0.01em;
-  transition: background-color 0.4s ease, color 0.4s ease;
+  background-color: var(--page-bg);
+  color: var(--page-text);
 }
 
+.page-root {
+  background-color: var(--page-bg);
+  color: var(--page-text);
+}
+
+/* Instant CSS-level theme control for background elements */
+html[data-theme="light"] .three-background-canvas,
+html.theme-light .three-background-canvas {
+  display: none !important;
+}
+
+.light-ambient-glow {
+  display: none;
+}
+
+html[data-theme="light"] .light-ambient-glow,
+html.theme-light .light-ambient-glow {
+  display: block;
+}
+
+html.theme-ready body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.theme-dark,
+html[data-theme="dark"],
+html.theme-hybrid,
+html[data-theme="hybrid"],
 .theme-dark body,
 .theme-hybrid body {
   background-color: #09090e;
@@ -49,6 +100,8 @@ body {
   color-scheme: dark;
 }
 
+html.theme-light,
+html[data-theme="light"],
 .theme-light body {
   background-color: #f8fafc;
   color: #0f172a;
