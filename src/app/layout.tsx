@@ -79,6 +79,23 @@ export default function RootLayout({
             {children}
           </SmoothScroll>
         </ThemeProvider>
+        {/* Google Analytics (GA4) */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-R82W2C1KL4"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-R82W2C1KL4');
+            `,
+          }}
+        />
       </body>
     </html>
   );
