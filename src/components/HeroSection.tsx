@@ -121,7 +121,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative pt-44 sm:pt-48 md:pt-52 pb-20 overflow-hidden"
+      className="relative pt-36 sm:pt-44 md:pt-48 pb-16 sm:pb-20 overflow-hidden"
     >
       {/* Ambient Keynote Stage Spotlight Aura */}
       <div
@@ -131,15 +131,15 @@ export default function HeroSection() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
         {/* Keynote Hero Command Center Header */}
-        <div className="flex flex-col items-center text-center space-y-6 max-w-4xl mx-auto">
-          {/* Top Live Studio Pill with Pulsing Status */}
+        <div className="flex flex-col items-center text-center space-y-5 sm:space-y-6 max-w-4xl mx-auto">
+          {/* Top Live Developer Pill with Pulsing Status */}
           <motion.div
             initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className={`inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-widest border shadow-lg backdrop-blur-xl ${
+            className={`inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-mono uppercase tracking-widest border shadow-lg backdrop-blur-xl ${
               isLight
                 ? "bg-white/95 border-zinc-300 text-zinc-900 shadow-sm"
                 : "bg-black/60 border-white/10 text-zinc-200"
@@ -151,16 +151,16 @@ export default function HeroSection() {
             </span>
             <span className="font-bold text-[#ff7a00]">JOHN ABISHEK SOFTWARES</span>
             <span className="text-zinc-400">·</span>
-            <span className="text-zinc-400 hidden sm:inline">OFFICIAL PRODUCTION HUB</span>
-            <span className="text-xs px-2 py-0.2 rounded-md bg-[#ff7a00]/15 text-[#ff7a00] font-bold ml-1">
+            <span className="text-zinc-400 hidden sm:inline">INDEPENDENT SOFTWARE DEVELOPER</span>
+            <span className="text-[10px] sm:text-xs px-2 py-0.2 rounded-md bg-[#ff7a00]/15 text-[#ff7a00] font-bold ml-0.5 sm:ml-1">
               {activeDiscipline.tag}
             </span>
           </motion.div>
 
           {/* Keynote Morphing Title */}
-          <div className="min-h-[140px] sm:min-h-[170px] md:min-h-[190px] flex flex-col items-center justify-center">
+          <div className="min-h-[120px] sm:min-h-[150px] md:min-h-[180px] flex flex-col items-center justify-center">
             <span
-              className={`text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight ${
+              className={`text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight ${
                 isLight ? "text-zinc-800" : "text-zinc-400"
               }`}
             >
@@ -174,7 +174,7 @@ export default function HeroSection() {
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 exit={{ opacity: 0, y: -18, filter: "blur(6px)" }}
                 transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                className={`text-4xl sm:text-6xl md:text-7xl font-black tracking-tight leading-[1.08] mt-1 bg-gradient-to-r ${activeDiscipline.accent} bg-clip-text text-transparent`}
+                className={`text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1] mt-1 bg-gradient-to-r ${activeDiscipline.accent} bg-clip-text text-transparent px-2`}
               >
                 {activeDiscipline.title}
               </motion.h1>
@@ -321,9 +321,9 @@ export default function HeroSection() {
         {/* Keynote Presentation Stage: Interactive 4-App Showcase Slider */}
         <div className="space-y-4">
           {/* Keynote Slide Selector Tabs */}
-          <div className="flex items-center justify-between gap-3 overflow-x-auto pb-1 scrollbar-none">
-            <div className="flex items-center gap-2">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#ff7a00] flex items-center gap-1.5 mr-2">
+          <div className="flex items-center justify-between gap-3 overflow-x-auto pb-2 scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
+            <div className="flex items-center gap-2 shrink-0">
+              <span className="text-[11px] font-bold uppercase tracking-widest text-[#ff7a00] flex items-center gap-1.5 mr-1 sm:mr-2 shrink-0">
                 <Sparkles className="w-3.5 h-3.5" />
                 KEYNOTE STAGE:
               </span>
@@ -371,10 +371,10 @@ export default function HeroSection() {
             </button>
           </div>
 
-          {/* Keynote Main Stage Card */}
-          <div className="relative rounded-[2.5rem] overflow-hidden border border-white/10 bg-[#0d0e17] shadow-2xl group">
+          {/* Keynote Main Stage Card - Clean Mobile Stack & Cinematic Desktop Overlay */}
+          <div className="relative rounded-3xl sm:rounded-[2.5rem] overflow-hidden border border-white/10 bg-[#0d0e17] shadow-2xl group">
             {/* Animated Laser Border Glow */}
-            <div className="pointer-events-none absolute -inset-[1px] rounded-[2.5rem] bg-gradient-to-r from-[#ff7a00] via-[#00f0ff] to-[#8b5cf6] opacity-35 group-hover:opacity-75 transition-opacity duration-700 blur-[2px]" />
+            <div className="pointer-events-none absolute -inset-[1px] rounded-3xl sm:rounded-[2.5rem] bg-gradient-to-r from-[#ff7a00] via-[#00f0ff] to-[#8b5cf6] opacity-35 group-hover:opacity-75 transition-opacity duration-700 blur-[2px]" />
 
             <AnimatePresence mode="wait">
               <motion.div
@@ -385,55 +385,56 @@ export default function HeroSection() {
                 transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 className="relative"
               >
-                {/* 1024x500 Feature Graphic Banner */}
-                <div className="relative w-full h-[320px] sm:h-[420px] md:h-[480px] overflow-hidden bg-black">
+                {/* Visual Banner Container */}
+                <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] md:aspect-auto md:h-[480px] lg:h-[510px] overflow-hidden bg-black">
                   <Image
                     src={activeApp.featureGraphic || activeApp.iconUrl}
                     alt={activeApp.name}
                     fill
                     priority
                     sizes="(max-width: 1280px) 100vw, 1280px"
-                    className="object-cover object-center filter brightness-[0.85] group-hover:scale-105 group-hover:brightness-95 transition-all duration-700 ease-out"
+                    className="object-cover object-center filter brightness-[0.88] md:brightness-[0.85] group-hover:scale-105 group-hover:brightness-95 transition-all duration-700 ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d0e17] via-black/45 to-black/20" />
+                  {/* Subtle Scrim Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d0e17] via-[#0d0e17]/40 md:via-black/45 to-black/25" />
+
+                  {/* Top Stage Bar: Badges + Audio Frequency Indicator */}
+                  <div className="absolute top-3.5 sm:top-5 inset-x-3.5 sm:inset-x-5 flex items-center justify-between z-20 pointer-events-none">
+                    <div className="flex items-center gap-2">
+                      <span className="px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest bg-black/85 backdrop-blur-md text-[#ff7a00] border border-[#ff7a00]/40 shadow-lg flex items-center gap-1.5">
+                        <Flame className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-[#ff7a00]" />
+                        <span>PRODUCTION SHIPPED</span>
+                      </span>
+
+                      {/* Live Visualizer for Worship Connect */}
+                      {activeApp.id === "worship-connect" ? (
+                        <div className="hidden sm:flex items-center gap-1 px-3 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-cyan-500/30">
+                          <Radio className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
+                          <span className="text-[10px] font-mono text-cyan-300 uppercase tracking-wider mr-1">Live Audio Wave</span>
+                          <span className="w-1 h-3 rounded-full bg-cyan-400 animate-bounce" style={{ animationDelay: "0ms" }} />
+                          <span className="w-1 h-5 rounded-full bg-cyan-400 animate-bounce" style={{ animationDelay: "150ms" }} />
+                          <span className="w-1 h-2 rounded-full bg-cyan-400 animate-bounce" style={{ animationDelay: "300ms" }} />
+                          <span className="w-1 h-4 rounded-full bg-cyan-400 animate-bounce" style={{ animationDelay: "450ms" }} />
+                        </div>
+                      ) : (
+                        <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-emerald-500/30 text-emerald-300 text-[10px] font-mono uppercase tracking-wider">
+                          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                          <span>Google Play Verified</span>
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold bg-black/85 backdrop-blur-md text-white border border-white/15 shadow">
+                      {activeApp.category} · {activeApp.rating} ★
+                    </div>
+                  </div>
                 </div>
 
-                {/* Top Stage Bar: Badges + Spectrum Visualizer */}
-                <div className="absolute top-5 inset-x-5 flex items-center justify-between pointer-events-none z-20">
-                  <div className="flex items-center gap-2">
-                    <span className="px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest bg-black/80 backdrop-blur-md text-[#ff7a00] border border-[#ff7a00]/40 shadow-lg flex items-center gap-1.5">
-                      <Flame className="w-3.5 h-3.5 fill-[#ff7a00]" />
-                      PRODUCTION SHIPPED
-                    </span>
-
-                    {/* Audio frequency bars for Worship Connect or Physics Trajectory indicator */}
-                    {activeApp.id === "worship-connect" ? (
-                      <div className="hidden sm:flex items-center gap-1 px-3 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-cyan-500/30">
-                        <Radio className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
-                        <span className="text-[10px] font-mono text-cyan-300 uppercase tracking-wider mr-1">Live Audio Wave</span>
-                        <span className="w-1 h-3 rounded-full bg-cyan-400 animate-bounce" style={{ animationDelay: "0ms" }} />
-                        <span className="w-1 h-5 rounded-full bg-cyan-400 animate-bounce" style={{ animationDelay: "150ms" }} />
-                        <span className="w-1 h-2 rounded-full bg-cyan-400 animate-bounce" style={{ animationDelay: "300ms" }} />
-                        <span className="w-1 h-4 rounded-full bg-cyan-400 animate-bounce" style={{ animationDelay: "450ms" }} />
-                      </div>
-                    ) : (
-                      <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-emerald-500/30 text-emerald-300 text-[10px] font-mono uppercase tracking-wider">
-                        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                        <span>Google Play Verified</span>
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="px-3.5 py-1.5 rounded-full text-xs font-bold bg-black/80 backdrop-blur-md text-white border border-white/15 shadow">
-                    {activeApp.category} · {activeApp.rating} ★
-                  </div>
-                </div>
-
-                {/* Bottom Content Overlay */}
-                <div className="absolute bottom-0 inset-x-0 p-6 sm:p-10 flex flex-col md:flex-row md:items-end justify-between gap-6 bg-gradient-to-t from-[#0d0e17] via-[#0d0e17]/85 to-transparent z-20">
+                {/* Content Section: Flow naturally on mobile (<md), Cinematic Overlay on desktop (>=md) */}
+                <div className="relative md:absolute md:bottom-0 md:inset-x-0 p-5 sm:p-7 md:p-10 flex flex-col md:flex-row md:items-end justify-between gap-5 md:gap-6 bg-gradient-to-b from-[#0d0e17] to-[#121320] md:bg-none md:bg-gradient-to-t md:from-[#0d0e17] md:via-[#0d0e17]/85 md:to-transparent z-20">
                   <div className="space-y-3 max-w-2xl">
-                    <div className="flex items-center gap-3.5">
-                      <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl shrink-0 bg-black">
+                    <div className="flex items-center gap-3 sm:gap-3.5">
+                      <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl shrink-0 bg-black">
                         <Image
                           src={activeApp.iconUrl}
                           alt={activeApp.name}
@@ -442,11 +443,11 @@ export default function HeroSection() {
                           className="w-full h-full object-cover"
                         />
                       </div>
-                      <div>
-                        <span className="text-xs font-bold uppercase tracking-wider text-[#ff7a00]">
+                      <div className="min-w-0">
+                        <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#ff7a00]">
                           {activeApp.category}
                         </span>
-                        <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight">
+                        <h2 className="text-xl sm:text-3xl md:text-4xl font-black text-white tracking-tight truncate sm:whitespace-normal">
                           {activeApp.name}
                         </h2>
                       </div>
@@ -457,30 +458,30 @@ export default function HeroSection() {
                     </p>
 
                     {/* Telemetry / Capability Pills */}
-                    <div className="flex flex-wrap items-center gap-2 pt-1 text-xs font-semibold">
-                      <span className="px-3 py-1 rounded-xl bg-white/[0.08] backdrop-blur-md text-zinc-200 border border-white/10 flex items-center gap-1.5">
+                    <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 pt-1 text-[11px] sm:text-xs font-semibold">
+                      <span className="px-2.5 sm:px-3 py-1 rounded-xl bg-white/[0.08] backdrop-blur-md text-zinc-200 border border-white/10 flex items-center gap-1.5">
                         <Star className="w-3.5 h-3.5 text-[#ff7a00] fill-[#ff7a00]" />
                         {activeApp.rating} Rating
                       </span>
-                      <span className="px-3 py-1 rounded-xl bg-[#ff7a00]/20 backdrop-blur-md text-[#ff7a00] border border-[#ff7a00]/30 font-mono">
+                      <span className="px-2.5 sm:px-3 py-1 rounded-xl bg-[#ff7a00]/20 backdrop-blur-md text-[#ff7a00] border border-[#ff7a00]/30 font-mono">
                         {activeApp.consoleMetrics.acquisitions} Acquisitions
                       </span>
-                      <span className="px-3 py-1 rounded-xl bg-emerald-500/20 backdrop-blur-md text-emerald-300 border border-emerald-500/30 font-mono">
+                      <span className="px-2.5 sm:px-3 py-1 rounded-xl bg-emerald-500/20 backdrop-blur-md text-emerald-300 border border-emerald-500/30 font-mono">
                         {activeApp.consoleMetrics.activeDevices} Active Devices
                       </span>
                     </div>
                   </div>
 
                   {/* Direct Action Launchers */}
-                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:flex items-stretch sm:items-center gap-2.5 sm:gap-3 shrink-0 pt-2 md:pt-0">
                     {activeApp.webAppUrl && (
                       <motion.a
                         href={activeApp.webAppUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="px-6 py-3.5 rounded-2xl text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white transition-all flex items-center justify-center gap-2 shadow-lg cursor-pointer"
+                        whileHover={{ scale: 1.04 }}
+                        whileTap={{ scale: 0.96 }}
+                        className="px-5 sm:px-6 py-3 sm:py-3.5 rounded-2xl text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white transition-all flex items-center justify-center gap-2 shadow-lg cursor-pointer"
                       >
                         <Globe className="w-4 h-4 text-[#00f0ff]" />
                         <span>Open Live Web</span>
@@ -491,9 +492,9 @@ export default function HeroSection() {
                       href={activeApp.playStoreUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="px-6 py-3.5 rounded-2xl text-xs font-bold bg-white hover:bg-zinc-200 text-black transition-all flex items-center justify-center gap-2 shadow-lg cursor-pointer"
+                      whileHover={{ scale: 1.04 }}
+                      whileTap={{ scale: 0.96 }}
+                      className="px-5 sm:px-6 py-3 sm:py-3.5 rounded-2xl text-xs font-bold bg-white hover:bg-zinc-200 text-black transition-all flex items-center justify-center gap-2 shadow-lg cursor-pointer"
                     >
                       <Smartphone className="w-4 h-4 text-[#ff7a00]" />
                       <span>On Google Play</span>
@@ -512,7 +513,7 @@ export default function HeroSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className={`p-6 sm:p-8 rounded-[2rem] border backdrop-blur-xl flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden transition-colors ${
+          className={`p-5 sm:p-8 rounded-3xl sm:rounded-[2rem] border backdrop-blur-xl flex flex-col md:flex-row items-center justify-between gap-5 sm:gap-6 relative overflow-hidden transition-colors ${
             isLight
               ? "bg-white border-zinc-200 shadow-lg"
               : "bg-gradient-to-r from-zinc-900/90 via-[#0d0e17]/90 to-zinc-900/90 border-white/10 shadow-2xl"
@@ -523,7 +524,7 @@ export default function HeroSection() {
               <Sparkles className="w-3.5 h-3.5 text-[#ff7a00]" />
               COMMUNITY APPRECIATION
             </div>
-            <h3 className={`text-xl sm:text-2xl font-bold ${isLight ? "text-zinc-950" : "text-white"}`}>
+            <h3 className={`text-lg sm:text-2xl font-bold ${isLight ? "text-zinc-950" : "text-white"}`}>
               Support Independent Software
             </h3>
             <p className={`text-xs sm:text-sm max-w-xl ${isLight ? "text-zinc-600 font-medium" : "text-zinc-400"}`}>
@@ -531,7 +532,7 @@ export default function HeroSection() {
             </p>
           </div>
 
-          <div className="relative flex items-center gap-4 shrink-0">
+          <div className="relative flex flex-col sm:flex-row items-center gap-3 sm:gap-4 shrink-0 w-full sm:w-auto">
             {/* Floating Multi-Color Heart Particles */}
             <AnimatePresence>
               {floatingHearts.map((h) => (
@@ -555,10 +556,10 @@ export default function HeroSection() {
             </AnimatePresence>
 
             <motion.button
-              whileHover={{ scale: 1.08 }}
-              whileTap={{ scale: 0.9 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               onClick={handleSendHeart}
-              className="px-6 py-3.5 rounded-2xl text-xs font-bold bg-red-500/15 hover:bg-red-500/25 border border-red-500/35 text-red-400 transition-all flex items-center gap-2.5 shadow-lg group cursor-pointer"
+              className="w-full sm:w-auto px-6 py-3 rounded-xl sm:rounded-2xl text-xs font-bold bg-red-500/15 hover:bg-red-500/25 border border-red-500/35 text-red-400 transition-all flex items-center justify-center gap-2.5 shadow-lg group cursor-pointer"
             >
               <Heart className="w-4 h-4 fill-red-500 text-red-500 group-hover:scale-125 transition-transform" />
               <span>SEND A HEART</span>

@@ -125,7 +125,7 @@ export default function ClosedTestingSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className={`rounded-3xl p-6 sm:p-9 border shadow-2xl space-y-8 ${
+              className={`rounded-3xl p-5 sm:p-9 border shadow-2xl space-y-6 sm:space-y-8 ${
                 theme === "hybrid"
                   ? "bg-gradient-to-b from-[#181926] to-[#111118] border-white/10 shadow-[0_24px_70px_rgba(0,0,0,0.6)]"
                   : isLight

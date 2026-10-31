@@ -17,9 +17,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://johnabisheksoftwares.dev"),
-  title: "John Abishek Softwares | Official Games & Applications Studio",
+  title: "John Abishek Softwares | Independent Software Developer & QA Architect",
   description:
-    "Official software showcase of John Abishek Softwares (johnabisheksoftwares.dev). Published Android games and apps on Google Play (Worship Connect, Bottle Shoot, Arrow Go, Birthday Reminder) and active closed testing titles.",
+    "Official software showcase of John Abishek Softwares (johnabisheksoftwares.dev). Independent Software Developer & Test Automation Engineer building Google Play games, enterprise test automation, and multi-platform cloud systems.",
   keywords: [
     "John Abishek Softwares",
     "johnabisheksoftwares.dev",

@@ -96,7 +96,7 @@ export const portfolioData = {
     secondaryPhotoUrl: "/johnImage.png",
     handle: "@Abishek7200",
     developerId: "8836865850863154479",
-    title: "Automation Test Engineer & Mobile App Developer",
+    title: "Independent Software Developer & Test Automation Engineer",
     brandName: "John Abishek Softwares",
     playDeveloperName: "Abishekkumar V (John Abishek Softwares)",
     playDeveloperUrl: "https://play.google.com/store/apps/developer?id=Abishekkumar",
@@ -104,11 +104,11 @@ export const portfolioData = {
     email: "vabishekkumar@gmail.com",
     github: "https://github.com/Abishek7200",
     linkedin: "https://www.linkedin.com/in/abishekkumar-v/",
-    availability: "Shipping Play Store Apps & Enterprise Automation • Open for Collaboration",
+    availability: "Independent Software Developer • Open for Opportunities & Collaboration",
     shortBio:
-      "Automation Test Engineer with 5+ years of specialized UI/API test automation and nearly 9 years in technology. Creator of John Abishek Softwares with 4 live Google Play production apps and games plus active Google Play closed testing titles.",
+      "Independent Software Developer & Automation Test Engineer with 5+ years of specialized UI/API test automation and nearly 9 years in technology. Creator of John Abishek Softwares with 4 live Google Play production apps and games plus active Google Play closed testing titles.",
     detailedBio:
-      "I am Abishekkumar V (John Abishek), founder of John Abishek Softwares (johnabisheksoftwares.dev). As an Automation Test Engineer at Exeter Premedia Services and an independent mobile app & game engineer, I specialize in combining rigorous test automation (Playwright JS, Jenkins CI/CD, AWS EC2, Postman) with polished Android products. My Google Play Console showcases 4 live production titles (Worship Connect, Bottle Shoot: Target Shooter, Arrow Go: Zen Logic Puzzle, Birthday Reminder: Wish Cards) alongside active Closed Testing cohorts for VerseSnap.",
+      "I am Abishekkumar V (John Abishek), founder of John Abishek Softwares (johnabisheksoftwares.dev). As an Independent Software Developer and Test Automation Engineer, I specialize in combining rigorous test automation (Playwright JS, Jenkins CI/CD, AWS EC2, Postman) with polished Android mobile products and multi-platform cloud systems. My Google Play Console showcases 4 live production titles (Worship Connect, Bottle Shoot: Target Shooter, Arrow Go: Zen Logic Puzzle, Birthday Reminder: Wish Cards) alongside active Closed Testing cohorts for VerseSnap.",
     stats: [
       { label: "Google Play Store", value: "4 Live", sublabel: "Production Apps & Games" },
       { label: "Closed Testing Track", value: "1 Active", sublabel: "VerseSnap Scripture Puzzle" },

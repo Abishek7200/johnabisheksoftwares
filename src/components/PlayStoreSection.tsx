@@ -76,7 +76,7 @@ function InteractiveGameCard({
       </div>
 
       {/* Card Content & Details (High contrast styling) */}
-      <div className="p-5 space-y-3.5 flex-1 flex flex-col justify-between relative z-20">
+      <div className="p-4 sm:p-5 space-y-3 sm:space-y-3.5 flex-1 flex flex-col justify-between relative z-20">
         <div className="space-y-2.5">
           {/* App Icon + Title Header */}
           <div className="flex items-center gap-3">
@@ -262,7 +262,7 @@ export default function PlayStoreSection() {
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             exit={{ opacity: 0, y: -16, filter: "blur(4px)" }}
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className={`rounded-3xl p-6 sm:p-9 shadow-2xl space-y-8 border transition-colors ${
+            className={`rounded-3xl p-5 sm:p-9 shadow-2xl space-y-6 sm:space-y-8 border transition-colors ${
               isLight
                 ? "bg-white border-zinc-200/90 shadow-[0_20px_50px_rgba(0,0,0,0.08)]"
                 : "bg-gradient-to-b from-[#141520] to-[#111118] border-white/10 shadow-[0_24px_70px_rgba(0,0,0,0.7)]"
