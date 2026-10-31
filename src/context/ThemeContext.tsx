@@ -21,23 +21,7 @@ const ThemeContext = createContext<ThemeContextType>({
 const useIsomorphicLayoutEffect = typeof window !== "undefined" ? React.useLayoutEffect : React.useEffect;
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  // Read initial theme synchronously if window is available or from document data-theme set by head script
-  const [theme, setTheme] = useState<ThemeMode>(() => {
-    if (typeof window !== "undefined") {
-      try {
-        const fromDoc = document.documentElement.getAttribute("data-theme") as ThemeMode | null;
-        if (fromDoc && (fromDoc === "hybrid" || fromDoc === "dark" || fromDoc === "light")) {
-          return fromDoc;
-        }
-        const saved = localStorage.getItem("ja_portfolio_theme") as ThemeMode | null;
-        if (saved && (saved === "hybrid" || saved === "dark" || saved === "light")) {
-          return saved;
-        }
-      } catch (e) {}
-    }
-    return "hybrid";
-  });
-
+  const [theme, setTheme] = useState<ThemeMode>("hybrid");
   const [isMounted, setIsMounted] = useState(false);
 
   // Synchronize state before browser paint
@@ -55,11 +39,12 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       ? saved
       : (docTheme && (docTheme === "hybrid" || docTheme === "dark" || docTheme === "light"))
       ? docTheme
-      : theme;
+      : "hybrid";
 
     if (currentTheme !== theme) {
       setTheme(currentTheme);
     }
+    setIsMounted(true);
 
     if (typeof document !== "undefined") {
       document.documentElement.setAttribute("data-theme", currentTheme);

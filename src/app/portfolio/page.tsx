@@ -64,7 +64,7 @@ export default function PortfolioPage() {
 
   return (
     <div className="page-root relative min-h-screen overflow-x-hidden selection:bg-[#ff7a00]/30 selection:text-black">
-      {theme !== "light" && <ThreeBackground />}
+      <ThreeBackground />
 
       <div className="relative z-10">
         {/* <Navbar /> */}

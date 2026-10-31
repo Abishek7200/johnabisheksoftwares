@@ -46,7 +46,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <head>
+      <body className="min-h-full flex flex-col font-sans">
         <Script
           id="theme-initializer"
           strategy="beforeInteractive"
@@ -73,8 +73,6 @@ export default function RootLayout({
             `,
           }}
         />
-      </head>
-      <body className="min-h-full flex flex-col font-sans">
         <ThemeProvider>
           <SmoothScroll>
             <CursorSpotlight />

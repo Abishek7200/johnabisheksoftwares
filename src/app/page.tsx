@@ -14,8 +14,8 @@ export default function HomePage() {
 
   return (
     <div className="page-root relative min-h-screen overflow-x-hidden selection:bg-[#ff7a00]/30 selection:text-black">
-      {/* Subtle Ambient Stardust Canvas */}
-      {theme !== "light" && <ThreeBackground />}
+      {/* Subtle Ambient Stardust Canvas (controlled in light mode via CSS .three-background-canvas) */}
+      <ThreeBackground />
 
       {/* Soft Ambient Light Gradient for Light */}
       <div className="light-ambient-glow pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(255,122,0,0.08),rgba(99,102,241,0.05),transparent_70%)]" />
